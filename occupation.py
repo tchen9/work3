@@ -2,12 +2,13 @@ import random
 
 source = open('occupations.csv', 'r')
 file = source.read()
-print(file)
-occupationsList = file.split('\r\n')
+#print(file)
+occupationsList = file.split('\n')
+#print(occupationsList)
 occupationsList.remove('')
 occupationsList.remove('Job Class,Percentage')
 occupationsList.remove('Total,99.8')
-#print(occupationsList)
+
 occupationsDict = {}
 #print(occupationsDict)
 tempList = []
@@ -34,10 +35,22 @@ def pickOccupation():
         while(counter < v * 10):
             bigList.append(k)
             counter += 1
-    print(random.choice(bigList))
-        
+    return random.choice(bigList);
 
-pickOccupation()
+#print(pickOccupation())
+
+'''t = 0
+count = 0
+job = pickOccupation()
+while(t < 10000):
+    if(pickOccupation() == job):
+        count += 1
+    t += 1
+    
+print(count / 100.0)
+print(occupationsDict[job])'''
+
+        
 
 
 
